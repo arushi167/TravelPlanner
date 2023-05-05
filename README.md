@@ -11,7 +11,8 @@ It will provide following `data` in `Tabular Format`:
 - Recommendations Based on Humidity & Temperature Difference
 
 ## Project Information
-This project was developed for a `24 hour long Hackathon`, where main `aim` was to `utilise` `OpenWeatherMap API` & build a project by solving real world problem
+This project was developed for a `24 hour long Hackathon`, where main `aim` was to `utilise` `OpenWeatherMap API` & build a project by solving real world problem.
+Our project was able to qualify 1st round.
 
 ## Design
 ![Design](Design.jpg)
