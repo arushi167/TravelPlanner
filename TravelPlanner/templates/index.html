@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Travel Planner</title>
+
+  <!--FAVICON-->
+  <link rel="icon" href="/static/images/letter-w.png">
+
+  <!-- CSS STYLESSHEET -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/style.css">
+
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/d77fdfcf27.js" crossorigin="anonymous"></script>
+
+  <!-- BOOTSTRAP SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+    <div class="container-fluid">
+
+
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href=""><img class="main-logo" src="/static/images/sunrise.png"> Travel Planner</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#search">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#signup">SignUp</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+      <!-- Title -->
+
+      <div class="row mobile-view">
+        <div class="col-lg-6">
+          <h1 class="big-heading">Plan Your Travel Smartly with Travel Planner</h1>
+          <a class="btn btn-warning btn-lg download-button  " href="#search">
+            <img class="search-button" src="/static/images/search-white.png" alt="search-button">                 Search
+          </a>
+        </div>
+        <div class="col-lg-6">
+          
+            <img class="title-image" src="/static/images/mountain.png" alt="mounatin-img">
+            <img class="cloud-image" src="/static/images/cloud.png" alt="cloud-img">
+            <img class="cloud1-image" src="/static/images/cloud.png" alt="cloud-img">
+            <img class="cloudy-img" src="/static/images/brightness.png" alt="sun-img">
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 text-center features-text">
+          <i class="fa-sharp fa-solid fa-circle-check features-logo"></i>
+          <h3 class="feature-title">Easy to use.</h3>
+          <p class="features">So easy to use, at your fingertips.</p>
+        </div>
+        <div class="col-lg-4 text-center features-text">
+          <i class="fa-solid fa-bullseye features-logo"></i>
+          <h3 class="feature-title">Personalized recommendation.</h3>
+          <p class="features">Get recommendations to plan your travel.</p>
+        </div>
+        <div class="col-lg-4 text-center features-text">
+          <img class="earth-logo" src="/static/images/earth-americas.png" alt="">
+          <h3 class="feature-title">Your travel planner.</h3>
+          <p class="features">Plan your trip with us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Search -->
+
+  <section class="colored-section" id="search">
+    <div class="container-fluid">
+      <h3 class="big-heading ">Enter your prompt!<img class="main-logo" src="/static/images/temperature-low.png" alt=""></h3>
+      <!-- <img class="humidity-img" src="/static/images/search-img.gif" alt=""> -->
+      <img class="drop-img" src="/static/images/drop.gif" alt="">
+      
+        <form method="POST">
+            {% csrf_token %}
+          <div class="input-group mb-3 search-form"></div>
+            <input type="text" name="user_prompt" class="form-control input-box city" placeholder="e.g. I would like to go bhopal from delhi for 5 days" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <!-- <input type="date" class="form-control input-box" placeholder="Date" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+            <div class="input-group-append">
+              <button class="btn btn-outline-warning col-lg-12" type="submit">GO!!</button>
+            </div>
+          </div>
+        </form>  
+    </div>
+ 
+  {% if data %}
+  <h3 class="big-heading ">Current Day Weather</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr style="background-color: #333; color: white;">
+              <th>Place</th>
+              <th>Description</th>
+              <th>Humidity</th>
+              <th>Max_Temperature</th>
+              <th>Min_Temperature</th>
+              <th>Pressure</th>
+              <th>Visibility</th>
+              <th>Wind Speed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr {% cycle 'class="table-light"' 'class="table-secondary"' %}>  
+                <td>{{ source }}</td>
+                <td>{{ data.1.source.description }}</td>
+                <td>{{ data.1.source.humidity }}</td>
+                <td>{{ data.1.source.maximum_temperture }}</td>
+                <td>{{ data.1.source.minimum_temperture }}</td>
+                <td>{{ data.1.source.pressure }}</td>
+                <td>{{ data.1.source.visibility }}</td>
+                <td>{{ data.1.source.wind_speed }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="big-heading ">Destination Weather</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr style="background-color: #333; color: white;">
+              <th>Day</th>
+              <th>Place</th>
+              <th>Description</th>
+              <th>Humidity</th>
+              <th>Max_Temperature</th>
+              <th>Min_Temperature</th>
+              <th>Pressure</th>
+              <th>Visibility</th>
+              <th>Wind Speed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for key, value in data.items %}
+            <tr {% cycle 'class="table-light"' 'class="table-secondary"' %}>
+                <td scope="row">Day {{ key }}</td>   
+                <td>{{ destination }}</td>
+                <td>{{ value.destination.description }}</td>
+                <td>{{ value.destination.humidity }}</td>
+                <td>{{ value.destination.maximum_temperture }}</td>
+                <td>{{ value.destination.minimum_temperture }}</td>
+                <td>{{ value.destination.pressure }}</td>
+                <td>{{ value.destination.visibility }}</td>
+                <td>{{ value.destination.wind_speed }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="big-heading ">Our Recommendations</h3>
+  <p style="color: black">Here are some of our top recommendations for your trip:</p>
+  <div class="row">
+    <div class="signup-column col-md-12">
+  <div class="card">
+    <div class="card-body">      
+      <ul class="list-group list-group-flush">
+        {% for recommendations in recommendations %}
+        <li class="list-group-item">{{recommendations}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+{% endif %} 
+  <section>
+  <!-- Search -->
+
+  <section class="white-section" id="signup">
+
+    <h2 class="section-heading">Get Personalized Advisory</h2>
+    <div class="row">
+      <div class="signup-column col-md-12">
+        <div class="card">
+          <div class="card-header up">
+            <h3>SignUp Now!</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text" style="color: black">Free</h2>
+            <p style="color: black">Get daily travel recommendations</p>
+            <div class="d-grid gap-2">
+                <a class="btn btn-outline-warning btn-lg col-lg-12" href="/signup" type="submit">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">  
+        <!-- Twitter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+  
+        <!-- Github -->
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="#">Travel Planner</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</body>
+
+</html>

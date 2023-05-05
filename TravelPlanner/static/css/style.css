@@ -1,0 +1,253 @@
+body{
+    font-family: 'Montserrat';
+    text-align: center;
+  }
+  h1, h2, h3, h4, h5, h6{
+    font-weight: 900;
+  }
+  
+  
+  /* Headings */
+  .big-heading{
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 900;
+  }
+  .section-heading{
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+  
+  
+  /* Containers */
+  .container-fluid{
+    padding: 4% 10%;
+  }
+  
+  .footer_container-fluid{
+    padding: 1% 1%;
+  }
+  
+
+  /* Sections */
+  .colored-section{
+    background-color: #9384D1;
+    color: #fff;
+  }
+  .white-section{
+    background-color: #FFEBEB;
+  }
+  
+  
+  /* Navigation Bar */
+  .navbar{
+    padding-bottom: 4.5rem;
+  }
+  .navbar-brand{
+    font-family: 'Ubuntu';
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFD3B0;
+  }
+  .nav-item{
+    padding: 0 18px;
+    font-size: 1.1rem;
+    font-family: 'Montserrat';
+    font-weight: 400;
+  }
+  .main-logo{
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+  }
+  .navbar-toggler{
+    color: #FDD36A;
+  }
+  .nav-link{
+    color: #FDD36A;
+  }
+  
+  /* Download Buttons */
+  .download-button{
+    margin: 5% 3% 5% 0;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  
+  /* Title Section */
+  #title .container-fluid {
+    padding: 3% 15% 7%;
+    text-align: left;
+  }
+  .search-button{
+    width: 20px;
+    height: 20px;
+  }
+  .search-button :hover{
+    background-color: none;
+  }
+  .btn-warning{
+    background-color: #FDD36A;
+  }
+  .btn-warning :hover{
+    background-color: #FFD3B0;
+  }
+
+  /* Title Image */
+  .title-image{
+    width: 60%;
+    position: absolute;
+    top: 20%;
+    left: 38%;
+  }
+  .cloud-image{
+    width: 14%;
+    position: absolute;
+    top: 50%;
+    right: 41%;
+    z-index: 2;
+  }
+  .cloud1-image{
+    width: 25%;
+    position: absolute;
+    bottom: 51%;
+    right: 2%;
+    z-index: 2;
+  }
+  .cloudy-img{
+    width: 10%;
+    position: absolute;
+    bottom: 55%;
+    right: 24%;
+  }
+  
+  
+  /* Logos */
+  .features-logo{
+    color: #FDD36A;
+    font-size: 3rem;
+    padding-bottom: 10px;
+  }
+  .features-logo:hover{
+    color: #FFD3B0;
+  }
+  .earth-logo{
+    width: 47px;
+    padding-bottom: 10px;
+  }
+  .earth-logo:hover{
+    content: url(images/earth-color.png);
+    width: 47px;
+    padding-bottom: 10px;
+  }
+  
+  /* Features text */
+  #features{
+    position: relative;
+  }
+  .feature-title{
+    font-size: 1.5rem;
+  }
+  .features{
+    color: #8f8f8f;
+  }
+  .features-text{
+    padding: 5% 5%;
+  }
+  
+  /* Search */
+  .search-form{
+    padding: 20px;
+  }
+  .input-box{
+    margin-bottom: 10px;
+    
+  }
+  
+  /* Signup Section */
+  #signup{
+    padding: 100px;
+  }
+  .up{
+    background-color: #FDD36A;
+  }
+  .price-text{
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+  .signup-column{
+    padding: 3% 2%;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  
+  /* Team Info */
+  #team-info{
+    padding: 100px;
+    background-color: #C9A7EB;
+  }
+  .testimonial-text{
+    font-family: 'Montserrat';
+    text-align: center;
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1.5;
+    color: #FDD36A;
+  }
+  .about{
+    color: #FFD3B0;
+  }
+  .team-image{
+    width: 25%;
+    border-radius: 100%;
+    margin: 20px;
+  }
+  .place{
+    color: #fff;
+  }
+  .team-link-logo{
+    margin: 5% 0.75% 5% 0.75%;
+    color: #000;
+  }
+  .team-link-logo:hover{
+    color: #FDD36A;
+  }
+  
+
+  
+  /* Footer */
+  .footer-logo{
+    margin: 5% 0.75% 5% 0.75%;
+    color: #000;
+  }
+  .footer-logo:hover{
+    color: #9384D1;
+  }
+  
+  @media (max-width: 1200px) and (min-width: 1050px){
+    .title-image{
+      right: 15%;
+    }
+  }
+  @media (max-width: 1050px) and (min-width: 990px){
+    .title-image{
+      position: absolute;
+      width: 28%;
+      right: 13%
+    }
+  }
+  @media (max-width: 990.1px){
+    #title{
+      text-align: center;
+    }
+    .mobile-view{
+      text-align: center;
+    }
+    .title-image{
+      width: 60%;
+      position: static;
+      transform: rotate(0);
+    }
+  }
+  

@@ -1,0 +1,8 @@
+python-pptx
+requests
+json5
+openai
+django
+celery 
+django-celery
+eventlet 
