@@ -15,7 +15,7 @@ This project was developed for a `24 hour long Hackathon`, where main `aim` was 
 Our project was able to qualify 1st round.
 
 ## Design
-![](Design/Design.JPG)
+![Design](Design/Design.JPG)
 
 ## Technology Used
 - Django
