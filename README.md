@@ -58,8 +58,8 @@ python manage.py runserver
 </td>
 
 <td align="center">
-    <a href="https://github.com/">
-        <kbd><img src="https://avatars3.githubusercontent.com/?size=400" width="100px;" alt=""/></kbd><br />
+    <a href="https://github.com/Ayushi0405">
+        <kbd><img src="https://avatars3.githubusercontent.com/Ayushi0405?size=400" width="100px;" alt=""/></kbd><br />
         <sub><b>Ayushi Gupta</b></sub>
     </a><br />
 </td>
