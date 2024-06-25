@@ -2,7 +2,7 @@
 Django Web Application which uses OpenAI &amp; OpenWeatherMap APIs for Travel Planning 
 
 - User Can Enter a Prompt e.g. `I would like to go bhopal from delhi for 3 days` in any format
-- Website will automatically detect the `Source`, `Destination` & `Total No. of Days`.
+- Website will automatically detect the `Source`, `Destination` and `Total No. of Days`.
 
 It will provide following `data` in `Tabular Format`:
 
