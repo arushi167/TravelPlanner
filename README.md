@@ -8,7 +8,7 @@ It will provide following `data` in `Tabular Format`:
 
 - Source Place Weather Info for Current Day
 - Destination Place Weather Info for N no. of days
-- Recommendations Based on Humidity & Temperature Difference
+- Recommendations Based on Humidity & Temperature Difference.
 
 ## Project Information
 This project was developed for a `24 hour long Hackathon`, where main `aim` was to `utilise` `OpenWeatherMap API` and build a project by solving real world problem.
