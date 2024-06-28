@@ -1,4 +1,4 @@
-# TravelPlanner.
+# TravelPlanner
 Django Web Application which uses OpenAI &amp; OpenWeatherMap APIs for Travel Planning 
 
 - User Can Enter a Prompt e.g. `I would like to go bhopal from delhi for 3 days` in any format
